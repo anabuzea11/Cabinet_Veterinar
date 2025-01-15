@@ -1,0 +1,44 @@
+﻿@page
+@model Cabinet_Veterinar.Pages.Consultatii.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Consultatie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Consultatie.Data_Consultatie" class="control-label"></label>
+                <input asp-for="Consultatie.Data_Consultatie" class="form-control" />
+                <span asp-validation-for="Consultatie.Data_Consultatie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consultatie.Diagnostic" class="control-label"></label>
+                <input asp-for="Consultatie.Diagnostic" class="form-control" />
+                <span asp-validation-for="Consultatie.Diagnostic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Consultatie.Pret" class="control-label"></label>
+                <input asp-for="Consultatie.Pret" class="form-control" />
+                <span asp-validation-for="Consultatie.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
